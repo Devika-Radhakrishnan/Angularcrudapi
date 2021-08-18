@@ -1,0 +1,33 @@
+
+    <div class="row">
+        <div class="col-lg-3 menu-bg">
+            <h3 class="mt-10">Menu</h3>
+            <ol id="detail">
+                <li>Departments
+                    <ul class="formDetails hide">
+                        <li>MECH</li>
+                        <li>CSE</li>
+                        <li>ETC</li>
+                        <li>IT</li>
+                    </ul>
+                </li>
+                <li>Admission
+                    <ul class="formDetails hide">
+                        <li>Fees</li>
+                        <a href="#/form">
+                            <li ng-click="showDetails = ! showDetails;getUser()">Form</li>
+                        </a>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-9">
+            <div ng-include="'partials/form.html'"></div>
+            <!--  -->
+        </div>
+    </div>
+<script>
+    $("#detail > li").click(function () {
+        $(this).find("ul.formDetails").toggleClass("hide");
+    });
+</script>

@@ -1,0 +1,31 @@
+input.ng-invalid.ng-dirty { background-color: lightpink; }
+input.ng-valid { background-color: lightgreen; }
+span.error { color: red; font-weight: bold; }
+.control-label{
+    background-color: white;
+}
+li { cursor: pointer; }
+.hide {
+    display: none;
+  }
+
+
+.menu-bg{
+    background-color: black;
+    height: 1300px;
+    margin-left: -70px;
+    color: white;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+.form-control{
+    width: 600px !important;
+}
+ul{
+    list-style-type: none;
+}
+.bg-color{
+    background-color: rgba(236, 222, 209, 0.959);
+}

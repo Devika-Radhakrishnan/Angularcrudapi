@@ -1,0 +1,87 @@
+     <!--Form-->
+     <div class="container" ng-show="showDetails">
+        <!-- <form ng-submit="createUser();getUser();" name="custForm"   novalidate> -->
+               <form ng-submit="createUser()" name="custForm"  novalidate>
+            <h4 class="mt-10">Create User</h4>
+            <!-- <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Request</th>
+                    <th scope="col">Response</th>
+           
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+               
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                 </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                  </tr>
+                </tbody>
+              </table> -->
+
+
+            <div class="form-group" ng-show="userid">
+                <label class="control-label col-md-2">ID</label>
+                <div class="col-md-4">
+                    <input type="number" class="form-control" ng-model="user.id" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Name:</label>
+                <div class="col-md-4">
+                    <input type="text" name="name" class="form-control" ng-model="user.name" />
+                    <span class="error" ng-show="custForm.name.$dirty&&custForm.name.$error.required">This is a
+                        required field</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Email</label>
+                <div class="col-md-4">
+                    <input type="email" class="form-control" ng-model="user.email" required />
+                    <span class="error" ng-show="custForm.email.$dirty&&custForm.email.$error.required">This is a
+                        required field</span>
+                    <span class="error" ng-show="custForm.email.$dirty && custForm.email.$error.email">Email is
+                        invalid</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Phone</label>
+                <div class="col-md-4">
+                    <input type="text" name="contact" class="form-control" ng-model="user.phone" ng-minlength="10"
+                        ng="maxlength"="13" required />
+                    <span class="error" ng-show="custForm.contact.$dirty&&custForm.contact.$error.required">This is
+                        a required field</span>
+                    <span class="error"
+                        ng-show="custForm.contact.$dirty && custForm.contact.$error.minlength">Contact no can't be
+                        less than 11</span>
+                    <span class="error"
+                        ng-show="custForm.contact.$dirty && custForm.contact.$error.maxlength">Contact no can't be
+                        more than 14</span>
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="submit" class="btn btn-success btn-sm" ng-show="submit"
+                    ng-disabled="custForm.$invalid" ng-click="ShowHide()"/>
+                <input type="button" value="update" ng-click="updateUser()" class="btn btn-success btn-sm"
+                    ng-show="update" />
+                <input type="button" value="cancel" ng-click="cancelUpdate()" class="btn btn-danger btn-sm"
+                    ng-show="cancel" />
+            </div>
+        </form>
+        <!--End Form-->
+        <!--Users List-->
+        <br />
+       <div ng-include="'partials/table.html'"></div>
+    </div>

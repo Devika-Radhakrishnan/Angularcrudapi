@@ -1,0 +1,29 @@
+
+<table class="table table-striped"  ng-hide = "IsHidden" >
+    <!-- <h4>Users List</h4> -->
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Action Commands</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>
+                <button class="btn btn-success btn-sm" ng-click="editUser(user)">
+                    Edit
+                </button>
+                <button class="btn btn-danger btn-sm" ng-click="deleteUser(user)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
